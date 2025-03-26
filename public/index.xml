@@ -2,18 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Welcome to My Site on SM Electronics</title>
-    <link>http://localhost:1313/SMElectronics/</link>
+    <link>https://ishabangla.github.io/SMElectronics/</link>
     <description>Recent content in Welcome to My Site on SM Electronics</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Mar 2025 08:41:45 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/SMElectronics/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/SMElectronics/posts/my-first-post/</link>
-      <pubDate>Wed, 26 Mar 2025 08:41:45 +0530</pubDate>
-      <guid>http://localhost:1313/SMElectronics/posts/my-first-post/</guid>
-      <description>&lt;p&gt;rtr&lt;/p&gt;</description>
-    </item>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://ishabangla.github.io/SMElectronics/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

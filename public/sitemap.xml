@@ -2,17 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/SMElectronics/posts/my-first-post/</loc>
+    <loc>https://ishabangla.github.io/SMElectronics/posts/</loc>
     <lastmod>2025-03-26T08:41:45+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/SMElectronics/posts/</loc>
+    <loc>https://ishabangla.github.io/SMElectronics/</loc>
     <lastmod>2025-03-26T08:41:45+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/SMElectronics/</loc>
-    <lastmod>2025-03-26T08:41:45+05:30</lastmod>
+    <loc>https://ishabangla.github.io/SMElectronics/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/SMElectronics/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/SMElectronics/tags/</loc>
+    <loc>https://ishabangla.github.io/SMElectronics/tags/</loc>
   </url>
 </urlset>
