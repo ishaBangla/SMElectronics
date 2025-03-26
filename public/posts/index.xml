@@ -6,14 +6,7 @@
     <description>Recent content in Posts on SM Electronics</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Mar 2025 08:41:45 +0530</lastBuildDate>
+    <lastBuildDate></lastBuildDate>
     <atom:link href="https://ishabangla.github.io/SMElectronics/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Simple LED Circuit</title>
-      <link>https://ishabangla.github.io/SMElectronics/posts/my-first-post/</link>
-      <pubDate>Wed, 26 Mar 2025 08:41:45 +0530</pubDate>
-      <guid>https://ishabangla.github.io/SMElectronics/posts/my-first-post/</guid>
-      <description>&lt;p&gt;Simple LED Circuit&#xA;Introduction&#xA;A simple LED circuit is one of the most basic electronic circuits. It consists of an LED, a resistor, and a power source (battery or adapter). This circuit is great for beginners to learn the basics of electricity and circuits.&lt;/p&gt;&#xA;&lt;p&gt;Components Required&#xA;Component&#x9;Specification&#x9;Quantity&#xA;LED&#x9;5mm Red/Blue/Green&#x9;1&#xA;Resistor&#x9;220Ω or 330Ω&#x9;1&#xA;Battery&#x9;9V&#x9;1&#xA;Connecting Wires&#x9;-&#x9;As required&#xA;Circuit Diagram&#xA;plaintext&#xA;Copy&#xA;Edit&#xA;+9V  &amp;mdash;&amp;mdash;&amp;mdash; [220Ω Resistor] &amp;mdash;&amp;mdash;&amp;mdash; |&amp;gt;| LED &amp;mdash;&amp;mdash;&amp;mdash; GND&#xA;The long leg (anode) of the LED connects to the positive terminal of the battery through the resistor.&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>
