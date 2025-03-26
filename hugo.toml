@@ -1,5 +1,5 @@
 baseURL = "https://ishaBangla.github.io/SMElectronics/"
 languageCode = 'en-us'
 title = 'SM Electronics'
-theme = "hugo-paper"
+theme = "paper"
 
