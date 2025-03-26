@@ -6,14 +6,14 @@
     <description>Recent content in Posts on SM Electronics</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Mar 2025 08:41:45 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 26 Mar 2025 10:00:00 +0000</lastBuildDate>
     <atom:link href="https://ishabangla.github.io/SMElectronics/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>https://ishabangla.github.io/SMElectronics/posts/my-first-post/</link>
-      <pubDate>Wed, 26 Mar 2025 08:41:45 +0530</pubDate>
-      <guid>https://ishabangla.github.io/SMElectronics/posts/my-first-post/</guid>
-      <description>&lt;p&gt;rtr&lt;/p&gt;</description>
+      <title>Simple LED Circuit</title>
+      <link>https://ishabangla.github.io/SMElectronics/posts/led-circuit/</link>
+      <pubDate>Wed, 26 Mar 2025 10:00:00 +0000</pubDate>
+      <guid>https://ishabangla.github.io/SMElectronics/posts/led-circuit/</guid>
+      <description>&lt;h2 id=&#34;simple-led-circuit&#34;&gt;Simple LED Circuit&lt;/h2&gt;&#xA;&lt;p&gt;A simple LED circuit consists of:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;A &lt;strong&gt;resistor&lt;/strong&gt; (e.g., 330Ω) to limit current&lt;/li&gt;&#xA;&lt;li&gt;An &lt;strong&gt;LED&lt;/strong&gt; to emit light&lt;/li&gt;&#xA;&lt;li&gt;A &lt;strong&gt;battery&lt;/strong&gt; (e.g., 9V) as a power source&lt;/li&gt;&#xA;&lt;li&gt;Wires for connections&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;circuit-diagram&#34;&gt;&lt;strong&gt;Circuit Diagram&lt;/strong&gt;&lt;/h3&gt;</description>
     </item>
   </channel>
 </rss>
