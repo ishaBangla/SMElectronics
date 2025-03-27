@@ -7,11 +7,5 @@ tags: ["electronics", "LED", "circuit"]
 
 ## Simple LED Circuit
 
-A simple LED circuit consists of:
 
-- A **resistor** (e.g., 330Ω) to limit current
-- An **LED** to emit light
-- A **battery** (e.g., 9V) as a power source
-- Wires for connections
 
-### **Circuit Diagram**
