@@ -11,7 +11,7 @@
   style="--bg:#faf8f1"
   lang="en-us"
   dir="ltr"
-><head>
+><head><script src="/SMElectronics/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=SMElectronics/livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -25,95 +25,20 @@
   
   <meta name="theme-color" />
 
-  <meta name="description" content="
-    &lt;label for=&quot;capacitanceValue&quot;&gt;Capacitance (C):&lt;/label&gt;
-    &lt;div class=&quot;input-group&quot;&gt;
-        &lt;input type=&quot;number&quot; id=&quot;capacitanceValue&quot; min=&quot;0&quot; step=&quot;any&quot;&gt;
-        &lt;select id=&quot;capacitanceUnit&quot; onchange=&quot;calculate()&quot;&gt;
-            &lt;option value=&quot;1e-6&quot;&gt;μF&lt;/option&gt;
-            &lt;option value=&quot;1e-9&quot;&gt;nF&lt;/option&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
+  <meta name="description" content="NE555 Astable Calculator
+This calculator helps determine the frequency, duty cycle, and timing parameters for an NE555 astable circuit.
+How to Use
 
-    &lt;label for=&quot;resistance1Value&quot;&gt;Resistance 1 (R1):&lt;/label&gt;
-    &lt;div class=&quot;input-group&quot;&gt;
-        &lt;input type=&quot;number&quot; id=&quot;resistance1Value&quot; min=&quot;0&quot; step=&quot;any&quot;&gt;
-        &lt;select id=&quot;resistance1Unit&quot; onchange=&quot;calculate()&quot;&gt;
-            &lt;option value=&quot;1&quot;&gt;Ω&lt;/option&gt;
-            &lt;option value=&quot;1000&quot;&gt;KΩ&lt;/option&gt;
-            &lt;option value=&quot;1000000&quot;&gt;MΩ&lt;/option&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
+Enter Capacitance (C), Resistor R1, and Resistor R2 values.
+The calculator will instantly compute Time High (T1), Time Low (T2), Frequency, and Duty Cycle.
+Use this to design oscillators and timers using the NE555 IC.
 
-    &lt;label for=&quot;resistance2Value&quot;&gt;Resistance 2 (R2):&lt;/label&gt;
-    &lt;div class=&quot;input-group&quot;&gt;
-        &lt;input type=&quot;number&quot; id=&quot;resistance2Value&quot; min=&quot;0&quot; step=&quot;any&quot;&gt;
-        &lt;select id=&quot;resistance2Unit&quot; onchange=&quot;calculate()&quot;&gt;
-            &lt;option value=&quot;1&quot;&gt;Ω&lt;/option&gt;
-            &lt;option value=&quot;1000&quot;&gt;KΩ&lt;/option&gt;
-            &lt;option value=&quot;1000000&quot;&gt;MΩ&lt;/option&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
-
-    &lt;button onclick=&quot;calculate()&quot;&gt;Calculate&lt;/button&gt;
-
-    &lt;div class=&quot;error-message&quot; id=&quot;errorMessage&quot;&gt;&lt;/div&gt;
-
-    &lt;label for=&quot;timeLowValue&quot;&gt;Time Low (T2):&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;timeLowValue&quot; readonly&gt;
-
-    &lt;label for=&quot;timeHighValue&quot;&gt;Time High (T1):&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;timeHighValue&quot; readonly&gt;
-
-    &lt;label for=&quot;periodValue&quot;&gt;Period (T):&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;periodValue&quot; readonly&gt;
-
-    &lt;label for=&quot;frequencyValue&quot;&gt;Frequency:&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;frequencyValue&quot; readonly&gt;
-
-    &lt;label for=&quot;dutyCycleValue&quot;&gt;Duty Cycle:&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;dutyCycleValue&quot; readonly&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-    function calculate() {
-        const capacitanceValue = parseFloat(document.getElementById(&quot;capacitanceValue&quot;).value);
-        const selectedCapacitanceUnit = parseFloat(document.getElementById(&quot;capacitanceUnit&quot;).value);
-        const resistance1Value = parseFloat(document.getElementById(&quot;resistance1Value&quot;).value);
-        const selectedResistance1Unit = parseFloat(document.getElementById(&quot;resistance1Unit&quot;).value);
-        const resistance2Value = parseFloat(document.getElementById(&quot;resistance2Value&quot;).value);
-        const selectedResistance2Unit = parseFloat(document.getElementById(&quot;resistance2Unit&quot;).value);
-
-        const capacitanceInFarads = capacitanceValue * selectedCapacitanceUnit;
-        const resistance1InOhms = resistance1Value * selectedResistance1Unit;
-        const resistance2InOhms = resistance2Value * selectedResistance2Unit;
-
-        if (isNaN(capacitanceInFarads) || isNaN(resistance1InOhms) || isNaN(resistance2InOhms)) {
-            document.getElementById(&quot;errorMessage&quot;).textContent = &quot;Please enter valid values!&quot;;
-            return;
-        }
-
-        document.getElementById(&quot;errorMessage&quot;).textContent = &quot;&quot;;
-
-        const timeLow = 0.693 * resistance2InOhms * capacitanceInFarads;
-        const timeHigh = 0.693 * (resistance1InOhms &#43; resistance2InOhms) * capacitanceInFarads;
-        const period = timeLow &#43; timeHigh;
-        const frequency = 1 / period;
-        const dutyCycle = (timeHigh / period) * 100;
-
-        document.getElementById(&quot;timeLowValue&quot;).value = timeLow.toFixed(6) &#43; &quot; s&quot;;
-        document.getElementById(&quot;timeHighValue&quot;).value = timeHigh.toFixed(6) &#43; &quot; s&quot;;
-        document.getElementById(&quot;periodValue&quot;).value = period.toFixed(6) &#43; &quot; s&quot;;
-        document.getElementById(&quot;frequencyValue&quot;).value = frequency.toFixed(3) &#43; &quot; Hz&quot;;
-        document.getElementById(&quot;dutyCycleValue&quot;).value = dutyCycle.toFixed(3) &#43; &quot;%&quot;;
-    }
-&lt;/script&gt;
-
+Calculator
 " />
-  <meta name="author" content="SM Electronics" /><link rel="preload stylesheet" as="style" href="https://ishabangla.github.io/SMElectronics/main.min.css" />
+  <meta name="author" content="SM Electronics" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/SMElectronics/main.min.css" />
 
   
-  <link rel="preload" as="image" href="https://ishabangla.github.io/SMElectronics/theme.png" />
+  <link rel="preload" as="image" href="http://localhost:1313/SMElectronics/theme.png" />
 
   
 
@@ -121,44 +46,21 @@
 
   <script
     defer
-    src="https://ishabangla.github.io/SMElectronics/highlight.min.js"
+    src="http://localhost:1313/SMElectronics/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
 
   
   <link
     rel="icon"
-    href="https://ishabangla.github.io/SMElectronics/favicon.ico"
+    href="http://localhost:1313/SMElectronics/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="https://ishabangla.github.io/SMElectronics/apple-touch-icon.png"
+    href="http://localhost:1313/SMElectronics/apple-touch-icon.png"
   />
 
   <meta name="generator" content="Hugo 0.145.0">
-  <meta itemprop="name" content="NE555 Astable Calculator">
-  <meta itemprop="description" content="&lt;label for=&#34;capacitanceValue&#34;&gt;Capacitance (C):&lt;/label&gt; &lt;div class=&#34;input-group&#34;&gt; &lt;input type=&#34;number&#34; id=&#34;capacitanceValue&#34; min=&#34;0&#34; step=&#34;any&#34;&gt; &lt;select id=&#34;capacitanceUnit&#34; onchange=&#34;calculate()&#34;&gt; &lt;option value=&#34;1e-6&#34;&gt;μF&lt;/option&gt; &lt;option value=&#34;1e-9&#34;&gt;nF&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;label for=&#34;resistance1Value&#34;&gt;Resistance 1 (R1):&lt;/label&gt; &lt;div class=&#34;input-group&#34;&gt; &lt;input type=&#34;number&#34; id=&#34;resistance1Value&#34; min=&#34;0&#34; step=&#34;any&#34;&gt; &lt;select id=&#34;resistance1Unit&#34; onchange=&#34;calculate()&#34;&gt; &lt;option value=&#34;1&#34;&gt;Ω&lt;/option&gt; &lt;option value=&#34;1000&#34;&gt;KΩ&lt;/option&gt; &lt;option value=&#34;1000000&#34;&gt;MΩ&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;label for=&#34;resistance2Value&#34;&gt;Resistance 2 (R2):&lt;/label&gt; &lt;div class=&#34;input-group&#34;&gt; &lt;input type=&#34;number&#34; id=&#34;resistance2Value&#34; min=&#34;0&#34; step=&#34;any&#34;&gt; &lt;select id=&#34;resistance2Unit&#34; onchange=&#34;calculate()&#34;&gt; &lt;option value=&#34;1&#34;&gt;Ω&lt;/option&gt; &lt;option value=&#34;1000&#34;&gt;KΩ&lt;/option&gt; &lt;option value=&#34;1000000&#34;&gt;MΩ&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;button onclick=&#34;calculate()&#34;&gt;Calculate&lt;/button&gt; &lt;div class=&#34;error-message&#34; id=&#34;errorMessage&#34;&gt;&lt;/div&gt; &lt;label for=&#34;timeLowValue&#34;&gt;Time Low (T2):&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;timeLowValue&#34; readonly&gt; &lt;label for=&#34;timeHighValue&#34;&gt;Time High (T1):&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;timeHighValue&#34; readonly&gt; &lt;label for=&#34;periodValue&#34;&gt;Period (T):&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;periodValue&#34; readonly&gt; &lt;label for=&#34;frequencyValue&#34;&gt;Frequency:&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;frequencyValue&#34; readonly&gt; &lt;label for=&#34;dutyCycleValue&#34;&gt;Duty Cycle:&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;dutyCycleValue&#34; readonly&gt; &lt;/div&gt; &lt;script&gt; function calculate() { const capacitanceValue = parseFloat(document.getElementById(&#34;capacitanceValue&#34;).value); const selectedCapacitanceUnit = parseFloat(document.getElementById(&#34;capacitanceUnit&#34;).value); const resistance1Value = parseFloat(document.getElementById(&#34;resistance1Value&#34;).value); const selectedResistance1Unit = parseFloat(document.getElementById(&#34;resistance1Unit&#34;).value); const resistance2Value = parseFloat(document.getElementById(&#34;resistance2Value&#34;).value); const selectedResistance2Unit = parseFloat(document.getElementById(&#34;resistance2Unit&#34;).value); const capacitanceInFarads = capacitanceValue * selectedCapacitanceUnit; const resistance1InOhms = resistance1Value * selectedResistance1Unit; const resistance2InOhms = resistance2Value * selectedResistance2Unit; if (isNaN(capacitanceInFarads) || isNaN(resistance1InOhms) || isNaN(resistance2InOhms)) { document.getElementById(&#34;errorMessage&#34;).textContent = &#34;Please enter valid values!&#34;; return; } document.getElementById(&#34;errorMessage&#34;).textContent = &#34;&#34;; const timeLow = 0.693 * resistance2InOhms * capacitanceInFarads; const timeHigh = 0.693 * (resistance1InOhms &#43; resistance2InOhms) * capacitanceInFarads; const period = timeLow &#43; timeHigh; const frequency = 1 / period; const dutyCycle = (timeHigh / period) * 100; document.getElementById(&#34;timeLowValue&#34;).value = timeLow.toFixed(6) &#43; &#34; s&#34;; document.getElementById(&#34;timeHighValue&#34;).value = timeHigh.toFixed(6) &#43; &#34; s&#34;; document.getElementById(&#34;periodValue&#34;).value = period.toFixed(6) &#43; &#34; s&#34;; document.getElementById(&#34;frequencyValue&#34;).value = frequency.toFixed(3) &#43; &#34; Hz&#34;; document.getElementById(&#34;dutyCycleValue&#34;).value = dutyCycle.toFixed(3) &#43; &#34;%&#34;; } &lt;/script&gt;">
-  <meta itemprop="datePublished" content="2025-03-26T12:00:00+06:00">
-  <meta itemprop="dateModified" content="2025-03-26T12:00:00+06:00">
-  <meta itemprop="wordCount" content="238">
-  <meta itemprop="keywords" content="NE555,Electronics,Circuit Calculator"><meta property="og:url" content="https://ishabangla.github.io/SMElectronics/posts/ne555-astable-calculator/">
-  <meta property="og:site_name" content="SM Electronics">
-  <meta property="og:title" content="NE555 Astable Calculator">
-  <meta property="og:description" content="&lt;label for=&#34;capacitanceValue&#34;&gt;Capacitance (C):&lt;/label&gt; &lt;div class=&#34;input-group&#34;&gt; &lt;input type=&#34;number&#34; id=&#34;capacitanceValue&#34; min=&#34;0&#34; step=&#34;any&#34;&gt; &lt;select id=&#34;capacitanceUnit&#34; onchange=&#34;calculate()&#34;&gt; &lt;option value=&#34;1e-6&#34;&gt;μF&lt;/option&gt; &lt;option value=&#34;1e-9&#34;&gt;nF&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;label for=&#34;resistance1Value&#34;&gt;Resistance 1 (R1):&lt;/label&gt; &lt;div class=&#34;input-group&#34;&gt; &lt;input type=&#34;number&#34; id=&#34;resistance1Value&#34; min=&#34;0&#34; step=&#34;any&#34;&gt; &lt;select id=&#34;resistance1Unit&#34; onchange=&#34;calculate()&#34;&gt; &lt;option value=&#34;1&#34;&gt;Ω&lt;/option&gt; &lt;option value=&#34;1000&#34;&gt;KΩ&lt;/option&gt; &lt;option value=&#34;1000000&#34;&gt;MΩ&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;label for=&#34;resistance2Value&#34;&gt;Resistance 2 (R2):&lt;/label&gt; &lt;div class=&#34;input-group&#34;&gt; &lt;input type=&#34;number&#34; id=&#34;resistance2Value&#34; min=&#34;0&#34; step=&#34;any&#34;&gt; &lt;select id=&#34;resistance2Unit&#34; onchange=&#34;calculate()&#34;&gt; &lt;option value=&#34;1&#34;&gt;Ω&lt;/option&gt; &lt;option value=&#34;1000&#34;&gt;KΩ&lt;/option&gt; &lt;option value=&#34;1000000&#34;&gt;MΩ&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;button onclick=&#34;calculate()&#34;&gt;Calculate&lt;/button&gt; &lt;div class=&#34;error-message&#34; id=&#34;errorMessage&#34;&gt;&lt;/div&gt; &lt;label for=&#34;timeLowValue&#34;&gt;Time Low (T2):&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;timeLowValue&#34; readonly&gt; &lt;label for=&#34;timeHighValue&#34;&gt;Time High (T1):&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;timeHighValue&#34; readonly&gt; &lt;label for=&#34;periodValue&#34;&gt;Period (T):&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;periodValue&#34; readonly&gt; &lt;label for=&#34;frequencyValue&#34;&gt;Frequency:&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;frequencyValue&#34; readonly&gt; &lt;label for=&#34;dutyCycleValue&#34;&gt;Duty Cycle:&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;dutyCycleValue&#34; readonly&gt; &lt;/div&gt; &lt;script&gt; function calculate() { const capacitanceValue = parseFloat(document.getElementById(&#34;capacitanceValue&#34;).value); const selectedCapacitanceUnit = parseFloat(document.getElementById(&#34;capacitanceUnit&#34;).value); const resistance1Value = parseFloat(document.getElementById(&#34;resistance1Value&#34;).value); const selectedResistance1Unit = parseFloat(document.getElementById(&#34;resistance1Unit&#34;).value); const resistance2Value = parseFloat(document.getElementById(&#34;resistance2Value&#34;).value); const selectedResistance2Unit = parseFloat(document.getElementById(&#34;resistance2Unit&#34;).value); const capacitanceInFarads = capacitanceValue * selectedCapacitanceUnit; const resistance1InOhms = resistance1Value * selectedResistance1Unit; const resistance2InOhms = resistance2Value * selectedResistance2Unit; if (isNaN(capacitanceInFarads) || isNaN(resistance1InOhms) || isNaN(resistance2InOhms)) { document.getElementById(&#34;errorMessage&#34;).textContent = &#34;Please enter valid values!&#34;; return; } document.getElementById(&#34;errorMessage&#34;).textContent = &#34;&#34;; const timeLow = 0.693 * resistance2InOhms * capacitanceInFarads; const timeHigh = 0.693 * (resistance1InOhms &#43; resistance2InOhms) * capacitanceInFarads; const period = timeLow &#43; timeHigh; const frequency = 1 / period; const dutyCycle = (timeHigh / period) * 100; document.getElementById(&#34;timeLowValue&#34;).value = timeLow.toFixed(6) &#43; &#34; s&#34;; document.getElementById(&#34;timeHighValue&#34;).value = timeHigh.toFixed(6) &#43; &#34; s&#34;; document.getElementById(&#34;periodValue&#34;).value = period.toFixed(6) &#43; &#34; s&#34;; document.getElementById(&#34;frequencyValue&#34;).value = frequency.toFixed(3) &#43; &#34; Hz&#34;; document.getElementById(&#34;dutyCycleValue&#34;).value = dutyCycle.toFixed(3) &#43; &#34;%&#34;; } &lt;/script&gt;">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-03-26T12:00:00+06:00">
-    <meta property="article:modified_time" content="2025-03-26T12:00:00+06:00">
-    <meta property="article:tag" content="NE555">
-    <meta property="article:tag" content="Electronics">
-    <meta property="article:tag" content="Circuit Calculator">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="NE555 Astable Calculator">
-  <meta name="twitter:description" content="&lt;label for=&#34;capacitanceValue&#34;&gt;Capacitance (C):&lt;/label&gt; &lt;div class=&#34;input-group&#34;&gt; &lt;input type=&#34;number&#34; id=&#34;capacitanceValue&#34; min=&#34;0&#34; step=&#34;any&#34;&gt; &lt;select id=&#34;capacitanceUnit&#34; onchange=&#34;calculate()&#34;&gt; &lt;option value=&#34;1e-6&#34;&gt;μF&lt;/option&gt; &lt;option value=&#34;1e-9&#34;&gt;nF&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;label for=&#34;resistance1Value&#34;&gt;Resistance 1 (R1):&lt;/label&gt; &lt;div class=&#34;input-group&#34;&gt; &lt;input type=&#34;number&#34; id=&#34;resistance1Value&#34; min=&#34;0&#34; step=&#34;any&#34;&gt; &lt;select id=&#34;resistance1Unit&#34; onchange=&#34;calculate()&#34;&gt; &lt;option value=&#34;1&#34;&gt;Ω&lt;/option&gt; &lt;option value=&#34;1000&#34;&gt;KΩ&lt;/option&gt; &lt;option value=&#34;1000000&#34;&gt;MΩ&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;label for=&#34;resistance2Value&#34;&gt;Resistance 2 (R2):&lt;/label&gt; &lt;div class=&#34;input-group&#34;&gt; &lt;input type=&#34;number&#34; id=&#34;resistance2Value&#34; min=&#34;0&#34; step=&#34;any&#34;&gt; &lt;select id=&#34;resistance2Unit&#34; onchange=&#34;calculate()&#34;&gt; &lt;option value=&#34;1&#34;&gt;Ω&lt;/option&gt; &lt;option value=&#34;1000&#34;&gt;KΩ&lt;/option&gt; &lt;option value=&#34;1000000&#34;&gt;MΩ&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;button onclick=&#34;calculate()&#34;&gt;Calculate&lt;/button&gt; &lt;div class=&#34;error-message&#34; id=&#34;errorMessage&#34;&gt;&lt;/div&gt; &lt;label for=&#34;timeLowValue&#34;&gt;Time Low (T2):&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;timeLowValue&#34; readonly&gt; &lt;label for=&#34;timeHighValue&#34;&gt;Time High (T1):&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;timeHighValue&#34; readonly&gt; &lt;label for=&#34;periodValue&#34;&gt;Period (T):&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;periodValue&#34; readonly&gt; &lt;label for=&#34;frequencyValue&#34;&gt;Frequency:&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;frequencyValue&#34; readonly&gt; &lt;label for=&#34;dutyCycleValue&#34;&gt;Duty Cycle:&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;dutyCycleValue&#34; readonly&gt; &lt;/div&gt; &lt;script&gt; function calculate() { const capacitanceValue = parseFloat(document.getElementById(&#34;capacitanceValue&#34;).value); const selectedCapacitanceUnit = parseFloat(document.getElementById(&#34;capacitanceUnit&#34;).value); const resistance1Value = parseFloat(document.getElementById(&#34;resistance1Value&#34;).value); const selectedResistance1Unit = parseFloat(document.getElementById(&#34;resistance1Unit&#34;).value); const resistance2Value = parseFloat(document.getElementById(&#34;resistance2Value&#34;).value); const selectedResistance2Unit = parseFloat(document.getElementById(&#34;resistance2Unit&#34;).value); const capacitanceInFarads = capacitanceValue * selectedCapacitanceUnit; const resistance1InOhms = resistance1Value * selectedResistance1Unit; const resistance2InOhms = resistance2Value * selectedResistance2Unit; if (isNaN(capacitanceInFarads) || isNaN(resistance1InOhms) || isNaN(resistance2InOhms)) { document.getElementById(&#34;errorMessage&#34;).textContent = &#34;Please enter valid values!&#34;; return; } document.getElementById(&#34;errorMessage&#34;).textContent = &#34;&#34;; const timeLow = 0.693 * resistance2InOhms * capacitanceInFarads; const timeHigh = 0.693 * (resistance1InOhms &#43; resistance2InOhms) * capacitanceInFarads; const period = timeLow &#43; timeHigh; const frequency = 1 / period; const dutyCycle = (timeHigh / period) * 100; document.getElementById(&#34;timeLowValue&#34;).value = timeLow.toFixed(6) &#43; &#34; s&#34;; document.getElementById(&#34;timeHighValue&#34;).value = timeHigh.toFixed(6) &#43; &#34; s&#34;; document.getElementById(&#34;periodValue&#34;).value = period.toFixed(6) &#43; &#34; s&#34;; document.getElementById(&#34;frequencyValue&#34;).value = frequency.toFixed(3) &#43; &#34; Hz&#34;; document.getElementById(&#34;dutyCycleValue&#34;).value = dutyCycle.toFixed(3) &#43; &#34;%&#34;; } &lt;/script&gt;">
-
-  <link rel="canonical" href="https://ishabangla.github.io/SMElectronics/posts/ne555-astable-calculator/" />
 </head>
 <body
     class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
@@ -168,7 +70,7 @@
   <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
     <a
       class="-translate-y-[1px] text-2xl font-medium"
-      href="https://ishabangla.github.io/SMElectronics/"
+      href="http://localhost:1313/SMElectronics/"
       >SM Electronics</a
     >
     <div
@@ -238,113 +140,38 @@
   <header class="mb-14">
     <h1 class="my-0! pb-2.5">NE555 Astable Calculator</h1><div class="text-xs antialiased opacity-60"><time>Mar 26, 2025</time></div></header>
 
-  <section><!-- raw HTML omitted -->
-<pre><code>    &lt;label for=&quot;capacitanceValue&quot;&gt;Capacitance (C):&lt;/label&gt;
-    &lt;div class=&quot;input-group&quot;&gt;
-        &lt;input type=&quot;number&quot; id=&quot;capacitanceValue&quot; min=&quot;0&quot; step=&quot;any&quot;&gt;
-        &lt;select id=&quot;capacitanceUnit&quot; onchange=&quot;calculate()&quot;&gt;
-            &lt;option value=&quot;1e-6&quot;&gt;μF&lt;/option&gt;
-            &lt;option value=&quot;1e-9&quot;&gt;nF&lt;/option&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
-
-    &lt;label for=&quot;resistance1Value&quot;&gt;Resistance 1 (R1):&lt;/label&gt;
-    &lt;div class=&quot;input-group&quot;&gt;
-        &lt;input type=&quot;number&quot; id=&quot;resistance1Value&quot; min=&quot;0&quot; step=&quot;any&quot;&gt;
-        &lt;select id=&quot;resistance1Unit&quot; onchange=&quot;calculate()&quot;&gt;
-            &lt;option value=&quot;1&quot;&gt;Ω&lt;/option&gt;
-            &lt;option value=&quot;1000&quot;&gt;KΩ&lt;/option&gt;
-            &lt;option value=&quot;1000000&quot;&gt;MΩ&lt;/option&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
-
-    &lt;label for=&quot;resistance2Value&quot;&gt;Resistance 2 (R2):&lt;/label&gt;
-    &lt;div class=&quot;input-group&quot;&gt;
-        &lt;input type=&quot;number&quot; id=&quot;resistance2Value&quot; min=&quot;0&quot; step=&quot;any&quot;&gt;
-        &lt;select id=&quot;resistance2Unit&quot; onchange=&quot;calculate()&quot;&gt;
-            &lt;option value=&quot;1&quot;&gt;Ω&lt;/option&gt;
-            &lt;option value=&quot;1000&quot;&gt;KΩ&lt;/option&gt;
-            &lt;option value=&quot;1000000&quot;&gt;MΩ&lt;/option&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
-
-    &lt;button onclick=&quot;calculate()&quot;&gt;Calculate&lt;/button&gt;
-
-    &lt;div class=&quot;error-message&quot; id=&quot;errorMessage&quot;&gt;&lt;/div&gt;
-
-    &lt;label for=&quot;timeLowValue&quot;&gt;Time Low (T2):&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;timeLowValue&quot; readonly&gt;
-
-    &lt;label for=&quot;timeHighValue&quot;&gt;Time High (T1):&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;timeHighValue&quot; readonly&gt;
-
-    &lt;label for=&quot;periodValue&quot;&gt;Period (T):&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;periodValue&quot; readonly&gt;
-
-    &lt;label for=&quot;frequencyValue&quot;&gt;Frequency:&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;frequencyValue&quot; readonly&gt;
-
-    &lt;label for=&quot;dutyCycleValue&quot;&gt;Duty Cycle:&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;dutyCycleValue&quot; readonly&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-    function calculate() {
-        const capacitanceValue = parseFloat(document.getElementById(&quot;capacitanceValue&quot;).value);
-        const selectedCapacitanceUnit = parseFloat(document.getElementById(&quot;capacitanceUnit&quot;).value);
-        const resistance1Value = parseFloat(document.getElementById(&quot;resistance1Value&quot;).value);
-        const selectedResistance1Unit = parseFloat(document.getElementById(&quot;resistance1Unit&quot;).value);
-        const resistance2Value = parseFloat(document.getElementById(&quot;resistance2Value&quot;).value);
-        const selectedResistance2Unit = parseFloat(document.getElementById(&quot;resistance2Unit&quot;).value);
-
-        const capacitanceInFarads = capacitanceValue * selectedCapacitanceUnit;
-        const resistance1InOhms = resistance1Value * selectedResistance1Unit;
-        const resistance2InOhms = resistance2Value * selectedResistance2Unit;
-
-        if (isNaN(capacitanceInFarads) || isNaN(resistance1InOhms) || isNaN(resistance2InOhms)) {
-            document.getElementById(&quot;errorMessage&quot;).textContent = &quot;Please enter valid values!&quot;;
-            return;
-        }
-
-        document.getElementById(&quot;errorMessage&quot;).textContent = &quot;&quot;;
-
-        const timeLow = 0.693 * resistance2InOhms * capacitanceInFarads;
-        const timeHigh = 0.693 * (resistance1InOhms + resistance2InOhms) * capacitanceInFarads;
-        const period = timeLow + timeHigh;
-        const frequency = 1 / period;
-        const dutyCycle = (timeHigh / period) * 100;
-
-        document.getElementById(&quot;timeLowValue&quot;).value = timeLow.toFixed(6) + &quot; s&quot;;
-        document.getElementById(&quot;timeHighValue&quot;).value = timeHigh.toFixed(6) + &quot; s&quot;;
-        document.getElementById(&quot;periodValue&quot;).value = period.toFixed(6) + &quot; s&quot;;
-        document.getElementById(&quot;frequencyValue&quot;).value = frequency.toFixed(3) + &quot; Hz&quot;;
-        document.getElementById(&quot;dutyCycleValue&quot;).value = dutyCycle.toFixed(3) + &quot;%&quot;;
-    }
-&lt;/script&gt;
-</code></pre>
+  <section><h1 id="ne555-astable-calculator">NE555 Astable Calculator</h1>
+<p>This calculator helps determine the <strong>frequency, duty cycle, and timing parameters</strong> for an <strong>NE555 astable circuit</strong>.</p>
+<h2 id="how-to-use"><strong>How to Use</strong></h2>
+<ul>
+<li>Enter <strong>Capacitance (C)</strong>, <strong>Resistor R1</strong>, and <strong>Resistor R2</strong> values.</li>
+<li>The calculator will instantly compute <strong>Time High (T1), Time Low (T2), Frequency, and Duty Cycle</strong>.</li>
+<li>Use this to design oscillators and timers using the <strong>NE555 IC</strong>.</li>
+</ul>
+<h2 id="calculator"><strong>Calculator</strong></h2>
 <!-- raw HTML omitted -->
 </section>
 
   <footer class="mt-12 flex flex-wrap"><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://ishabangla.github.io/SMElectronics/tags/ne555"
+      href="http://localhost:1313/SMElectronics/tags/ne555"
       >NE555</a
     ><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://ishabangla.github.io/SMElectronics/tags/electronics"
+      href="http://localhost:1313/SMElectronics/tags/electronics"
       >Electronics</a
     ><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://ishabangla.github.io/SMElectronics/tags/circuit-calculator"
-      >Circuit Calculator</a
+      href="http://localhost:1313/SMElectronics/tags/calculator"
+      >Calculator</a
     ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://ishabangla.github.io/SMElectronics/posts/led-circuit/"
+  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/SMElectronics/posts/led-circuit/"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Simple LED Circuit</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
-  <div class="mr-auto">&copy;2025<a class="link" href="https://ishabangla.github.io/SMElectronics/">SM Electronics</a></div>
+  <div class="mr-auto">&copy;2025<a class="link" href="http://localhost:1313/SMElectronics/">SM Electronics</a></div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
     >powered by hugo️️</a
   >️

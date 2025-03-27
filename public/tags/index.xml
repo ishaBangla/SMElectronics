@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on SM Electronics</title>
-    <link>https://ishabangla.github.io/SMElectronics/tags/</link>
+    <link>http://localhost:1313/SMElectronics/tags/</link>
     <description>Recent content in Tags on SM Electronics</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Mar 2025 14:00:00 +0000</lastBuildDate>
-    <atom:link href="https://ishabangla.github.io/SMElectronics/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/SMElectronics/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Beginner</title>
-      <link>https://ishabangla.github.io/SMElectronics/tags/beginner/</link>
+      <link>http://localhost:1313/SMElectronics/tags/beginner/</link>
       <pubDate>Wed, 26 Mar 2025 14:00:00 +0000</pubDate>
-      <guid>https://ishabangla.github.io/SMElectronics/tags/beginner/</guid>
+      <guid>http://localhost:1313/SMElectronics/tags/beginner/</guid>
       <description></description>
     </item>
     <item>
       <title>Electronics</title>
-      <link>https://ishabangla.github.io/SMElectronics/tags/electronics/</link>
+      <link>http://localhost:1313/SMElectronics/tags/electronics/</link>
       <pubDate>Wed, 26 Mar 2025 14:00:00 +0000</pubDate>
-      <guid>https://ishabangla.github.io/SMElectronics/tags/electronics/</guid>
+      <guid>http://localhost:1313/SMElectronics/tags/electronics/</guid>
       <description></description>
     </item>
     <item>
       <title>LED</title>
-      <link>https://ishabangla.github.io/SMElectronics/tags/led/</link>
+      <link>http://localhost:1313/SMElectronics/tags/led/</link>
       <pubDate>Wed, 26 Mar 2025 14:00:00 +0000</pubDate>
-      <guid>https://ishabangla.github.io/SMElectronics/tags/led/</guid>
+      <guid>http://localhost:1313/SMElectronics/tags/led/</guid>
       <description></description>
     </item>
     <item>
       <title>Circuit</title>
-      <link>https://ishabangla.github.io/SMElectronics/tags/circuit/</link>
+      <link>http://localhost:1313/SMElectronics/tags/circuit/</link>
       <pubDate>Wed, 26 Mar 2025 10:00:00 +0000</pubDate>
-      <guid>https://ishabangla.github.io/SMElectronics/tags/circuit/</guid>
+      <guid>http://localhost:1313/SMElectronics/tags/circuit/</guid>
       <description></description>
     </item>
     <item>
-      <title>Circuit Calculator</title>
-      <link>https://ishabangla.github.io/SMElectronics/tags/circuit-calculator/</link>
+      <title>Calculator</title>
+      <link>http://localhost:1313/SMElectronics/tags/calculator/</link>
       <pubDate>Wed, 26 Mar 2025 12:00:00 +0600</pubDate>
-      <guid>https://ishabangla.github.io/SMElectronics/tags/circuit-calculator/</guid>
+      <guid>http://localhost:1313/SMElectronics/tags/calculator/</guid>
       <description></description>
     </item>
     <item>
       <title>NE555</title>
-      <link>https://ishabangla.github.io/SMElectronics/tags/ne555/</link>
+      <link>http://localhost:1313/SMElectronics/tags/ne555/</link>
       <pubDate>Wed, 26 Mar 2025 12:00:00 +0600</pubDate>
-      <guid>https://ishabangla.github.io/SMElectronics/tags/ne555/</guid>
+      <guid>http://localhost:1313/SMElectronics/tags/ne555/</guid>
       <description></description>
     </item>
   </channel>
