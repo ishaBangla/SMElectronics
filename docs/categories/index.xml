@@ -6,6 +6,21 @@
     <description>Recent content in Categories on SM Electronics</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 26 Mar 2025 12:00:00 +0600</lastBuildDate>
     <atom:link href="https://ishabangla.github.io/SMElectronics/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Calculators</title>
+      <link>https://ishabangla.github.io/SMElectronics/categories/calculators/</link>
+      <pubDate>Wed, 26 Mar 2025 12:00:00 +0600</pubDate>
+      <guid>https://ishabangla.github.io/SMElectronics/categories/calculators/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Electronics</title>
+      <link>https://ishabangla.github.io/SMElectronics/categories/electronics/</link>
+      <pubDate>Wed, 26 Mar 2025 12:00:00 +0600</pubDate>
+      <guid>https://ishabangla.github.io/SMElectronics/categories/electronics/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
