@@ -25,9 +25,9 @@
     <item>
       <title>NE555 Astable Calculator</title>
       <link>https://ishabangla.github.io/SMElectronics/posts/ne555-astable-calculator/</link>
-      <pubDate>Wed, 26 Mar 2025 12:00:00 +0600</pubDate>
+      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
       <guid>https://ishabangla.github.io/SMElectronics/posts/ne555-astable-calculator/</guid>
-      <description>&lt;h1 id=&#34;ne555-astable-calculator&#34;&gt;NE555 Astable Calculator&lt;/h1&gt;&#xA;&lt;p&gt;This calculator helps determine the &lt;strong&gt;frequency, duty cycle, and timing parameters&lt;/strong&gt; for an &lt;strong&gt;NE555 astable circuit&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-to-use&#34;&gt;&lt;strong&gt;How to Use&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Enter &lt;strong&gt;Capacitance (C)&lt;/strong&gt;, &lt;strong&gt;Resistor R1&lt;/strong&gt;, and &lt;strong&gt;Resistor R2&lt;/strong&gt; values.&lt;/li&gt;&#xA;&lt;li&gt;The calculator will instantly compute &lt;strong&gt;Time High (T1), Time Low (T2), Frequency, and Duty Cycle&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Use this to design oscillators and timers using the &lt;strong&gt;NE555 IC&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;calculator&#34;&gt;&lt;strong&gt;Calculator&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;Want to calculate the frequency and duty cycle of an &lt;strong&gt;NE555 Astable Circuit&lt;/strong&gt;?&lt;br&gt;&#xA;Use the calculator below:&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;</description>
     </item>
   </channel>
 </rss>
