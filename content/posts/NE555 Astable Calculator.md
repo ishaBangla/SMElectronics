@@ -24,7 +24,7 @@ Use this NE555 Astable Calculator to determine frequency, duty cycle, and timing
 
   .calculator .input-group input,
   .calculator .input-group select {
-    width: 120px;
+    width: 170px;
     padding: 0.4rem;
     border: 2px solid #007bff;
     border-radius: 5px;
