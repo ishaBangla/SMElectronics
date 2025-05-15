@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NE555 Astable Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 95%;
+            max-width: 400px;
+            margin: auto;
+            padding: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        select, input[type="number"], input[type="text"], button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .error-message {
+            color: red;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        input[type="text"]:focus { outline: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NE555 Astable Calculator</h1>
+
+        <label for="capacitanceValue">Capacitance (C):</label>
+        <input type="number" id="capacitanceValue" min="0" step="any" placeholder="Enter Capacitance">
+        <select id="capacitanceUnit" onchange="calculate()">
+            <option value="1e-6">μF</option>
+            <option value="1e-9">nF</option>
+        </select>
+
+        <label for="resistance1Value">Resistance 1 (R1):</label>
+        <input type="number" id="resistance1Value" min="0" step="any" placeholder="Enter R1">
+        <select id="resistance1Unit" onchange="calculate()">
+            <option value="1">Ω</option>
+            <option value="1000">KΩ</option>
+            <option value="1000000">MΩ</option>
+        </select>
+
+        <label for="resistance2Value">Resistance 2 (R2):</label>
+        <input type="number" id="resistance2Value" min="0" step="any" placeholder="Enter R2">
+        <select id="resistance2Unit" onchange="calculate()">
+            <option value="1">Ω</option>
+            <option value="1000">KΩ</option>
+            <option value="1000000">MΩ</option>
+        </select>
+
+        <button onclick="calculate()">Calculate</button>
+        <div class="error-message" id="errorMessage"></div>
+
+        <label>Time Low (T2):</label>
+        <input type="text" id="timeLowValue" readonly>
+
+        <label>Time High (T1):</label>
+        <input type="text" id="timeHighValue" readonly>
+
+        <label>Period (T):</label>
+        <input type="text" id="periodValue" readonly>
+
+        <label>Frequency:</label>
+        <input type="text" id="frequencyValue" readonly>
+
+        <label>Duty Cycle:</label>
+        <input type="text" id="dutyCycleValue" readonly>
+    </div>
+
+    <script>
+        function calculate() {
+            const cValue = parseFloat(document.getElementById("capacitanceValue").value);
+            const cUnit = parseFloat(document.getElementById("capacitanceUnit").value);
+            const r1Value = parseFloat(document.getElementById("resistance1Value").value);
+            const r1Unit = parseFloat(document.getElementById("resistance1Unit").value);
+            const r2Value = parseFloat(document.getElementById("resistance2Value").value);
+            const r2Unit = parseFloat(document.getElementById("resistance2Unit").value);
+
+            const errorMessage = document.getElementById("errorMessage");
+
+            if (isNaN(cValue) || isNaN(r1Value) || isNaN(r2Value)) {
+                errorMessage.textContent = "Please enter valid values.";
+                return;
+            }
+            errorMessage.textContent = "";
+
+            const capacitance = cValue * cUnit;
+            const resistance1 = r1Value * r1Unit;
+            const resistance2 = r2Value * r2Unit;
+
+            const tLow = 0.693 * resistance2 * capacitance;
+            const tHigh = 0.693 * (resistance1 + resistance2) * capacitance;
+            const period = tLow + tHigh;
+            const frequency = 1 / period;
+            const dutyCycle = (tHigh / period) * 100;
+
+            document.getElementById("timeLowValue").value = tLow.toFixed(6) + " sec";
+            document.getElementById("timeHighValue").value = tHigh.toFixed(6) + " sec";
+            document.getElementById("periodValue").value = period.toFixed(6) + " sec";
+            document.getElementById("frequencyValue").value = frequency.toFixed(3) + " Hz";
+            document.getElementById("dutyCycleValue").value = dutyCycle.toFixed(2) + "%";
+        }
+    </script>
+</body>
+</html>

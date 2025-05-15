@@ -1,7 +1,11 @@
-baseURL = 'http://localhost:1313/'
-languageCode = 'en-us'
-title = 'SM Electronics'
-theme = 'paper'
+baseURL = "https://ishabangla.github.io/SMElectronics/"
+publishDir = "docs"
+languageCode = "en-us"
+title = "SM Electronics"
+theme = "paper"
 
-[markup.goldmark.renderer]
-  unsafe = true
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
