@@ -137,11 +137,26 @@ Use this NE555 Astable Calculator to determine frequency, duty cycle, and timing
     }
 
     resultDiv.innerHTML = `
-      <p>Time High (T1): ${T1.toFixed(6)} seconds</p>
-      <p>Time Low (T2): ${T2.toFixed(6)} seconds</p>
-      <p>Period (T): ${T.toFixed(6)} seconds</p>
+      <p>Time High (T1): ${formatTime(T1)} (${T1.toFixed(6)} seconds)</p>
+      <p>Time Low (T2): ${formatTime(T2)} (${T2.toFixed(6)} seconds)</p>
+      <p>Period (T): ${formatTime(T)} (${T.toFixed(6)} seconds)</p>
       <p>Frequency: ${freqDisplay}</p>
       <p>Duty Cycle: ${duty.toFixed(2)}%</p>
     `;
   }
+
+  function formatTime(seconds) {
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = (seconds % 60).toFixed(2);
+
+    let result = "";
+
+    if (hrs > 0) result += `${hrs} hr `;
+    if (mins > 0 || hrs > 0) result += `${mins} min `;
+    result += `${secs} sec`;
+
+    return result.trim();
+  }
 </script>
+
