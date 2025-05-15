@@ -3,11 +3,12 @@
 >
   <div class="relative z-50 flex items-center justify-between w-full">
     <div>
-      <a class="-translate-y-[1px] text-5xl font-medium block" href="{{- `` | absURL -}}">
-        {{ site.Title }}
-      </a>
+      <a class="-translate-y-[1px] text-5xl font-bold block leading-tight" href="{{- ` | absURL -}}">
+  {{ site.Title }}
+</a>
+
       <p class="text-sm text-gray-500 mt-1">
-        {{ site.Params.subtitle | default "Your subtitle goes here" }}
+        {{ site.Params.subtitle | default "for the love of electronics" }}
       </p>
     </div>
 
