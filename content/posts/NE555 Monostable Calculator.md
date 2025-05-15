@@ -8,7 +8,7 @@ Calculate the pulse duration for your NE555 timer in monostable mode. Enter your
 
 <style>
   .calculator {
-    max-width: 500px;
+    max-width: 600px;
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -34,7 +34,11 @@ Calculate the pulse duration for your NE555 timer in monostable mode. Enter your
   .calculator .input-group input:focus,
   .calculator .input-group select:focus {
     border-color: #0056b3;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3); /* Subtle blue glow */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+  }
+
+  .calculator .small-input {
+    flex: 0 0 100px; /* Reduced width */
   }
 
   .calculator button {
@@ -62,7 +66,7 @@ Calculate the pulse duration for your NE555 timer in monostable mode. Enter your
 <div class="calculator">
   <label for="capacitanceValue">Capacitance:</label>
   <div class="input-group">
-    <input type="number" id="capacitanceValue" min="0" step="any">
+    <input type="number" class="small-input" id="capacitanceValue" min="0" step="any">
     <select id="capacitanceUnit">
       <option value="1e-6">micro Farad (μF)</option>
       <option value="1e-9">nano Farad (nF)</option>
@@ -71,7 +75,7 @@ Calculate the pulse duration for your NE555 timer in monostable mode. Enter your
   
   <label for="resistanceValue">Resistance:</label>
   <div class="input-group">
-    <input type="number" id="resistanceValue" min="0" step="any">
+    <input type="number" class="small-input" id="resistanceValue" min="0" step="any">
     <select id="resistanceUnit">
       <option value="1">ohm (Ω)</option>
       <option value="1000">Kilo ohm (KΩ)</option>
