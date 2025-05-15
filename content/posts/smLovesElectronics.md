@@ -6,4 +6,4 @@ tags: ["LED", "Electronics", "Beginner"]
 ---
 ## **Introduction**  
 hello friends....
-Love you all.❤️❤️❤️
+Love you ❤️❤️❤️
