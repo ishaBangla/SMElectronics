@@ -1,6 +1,9 @@
-{{ $image := resources.Get (print "images/" (.Get "src")) }}
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "Image" }}
+{{ $image := resources.Get $src }}
+
 {{ if $image }}
-  <img src="{{ $image.RelPermalink }}" alt="{{ .Get "alt" }}">
+  <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" style="max-width:100%; height:auto;" />
 {{ else }}
-  <p style="color: red;">Image not found: {{ .Get "src" }}</p>
+  <p style="color:red;">Image not found: {{ $src }}</p>
 {{ end }}
