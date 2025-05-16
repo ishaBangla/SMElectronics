@@ -9,6 +9,8 @@ draft: false
 {{< myimage "images/im1.jpg" >}}
 {{< myimage src="images/im1.jpg" alt="555 Circuit" >}}
 {{< myimage src="images/im1.jpg" alt="555 Circuit" >}}
+hi
+![555 Circuit](/images/im1.jpg)
 
 
 
