@@ -3,11 +3,11 @@ title: "NE555 Astable Calculator"
 date: 2025-05-14T11:30:00+05:30
 draft: false
 ---
+{{< myimage src="im1.jpg" alt="555 Circuit" >}}
 
-{{< myimage src="im1.jpg" alt="NE555 Timer Image" >}}
 
 
-Use this NE555 Astable Calculator to determine frequency, duty cycle, and timing for your oscillator circuit.
+this NE555 Astable Calculator to determine frequency, duty cycle, and timing for your oscillator circuit.
 <style>
   .calculator {
     max-width: 500px;
