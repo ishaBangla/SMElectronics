@@ -20,16 +20,24 @@
   />
 
   
-  <title>Posts - SM Electronics</title>
+  <title>NE555 Astable Calculator - SM Electronics</title>
 
   
   <meta name="theme-color" />
 
+  <meta name="description" content="
+Use this NE555 Astable Calculator to determine frequency, duty cycle, and timing for your oscillator circuit.
+
+
+  Capacitance (C):
   
-  <meta
-    name="description"
-    content="A personal blog"
-  />
+    
+    
+      μF
+      nF
+    
+  
+Resistance 1 (R1):" />
   <meta name="author" content="SM Electronics" /><link rel="preload stylesheet" as="style" href="https://ishaBangla.github.io/SMElectronics/main.min.css" />
 
   
@@ -39,7 +47,11 @@
 
   
 
-  
+  <script
+    defer
+    src="https://ishaBangla.github.io/SMElectronics/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
 
   
   <link
@@ -52,22 +64,26 @@
   />
 
   <meta name="generator" content="Hugo 0.147.1">
-  <meta itemprop="name" content="Posts">
+  <meta itemprop="name" content="NE555 Astable Calculator">
+  <meta itemprop="description" content="Use this NE555 Astable Calculator to determine frequency, duty cycle, and timing for your oscillator circuit.
+Capacitance (C): μF nF Resistance 1 (R1):">
   <meta itemprop="datePublished" content="2025-05-14T11:30:00+05:30">
-  <meta itemprop="dateModified" content="2025-05-14T11:30:00+05:30"><meta property="og:url" content="https://ishaBangla.github.io/SMElectronics/posts/">
+  <meta itemprop="dateModified" content="2025-05-14T11:30:00+05:30">
+  <meta itemprop="wordCount" content="33"><meta property="og:url" content="https://ishaBangla.github.io/SMElectronics/posts/">
   <meta property="og:site_name" content="SM Electronics">
-  <meta property="og:title" content="Posts">
+  <meta property="og:title" content="NE555 Astable Calculator">
+  <meta property="og:description" content="Use this NE555 Astable Calculator to determine frequency, duty cycle, and timing for your oscillator circuit.
+Capacitance (C): μF nF Resistance 1 (R1):">
   <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2025-05-14T11:30:00+05:30">
+    <meta property="article:modified_time" content="2025-05-14T11:30:00+05:30">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Posts">
-<link
-    rel="alternate"
-    type="application/rss&#43;xml"
-    href="https://ishaBangla.github.io/SMElectronics/posts/index.xml"
-    title="SM Electronics"
-  />
+  <meta name="twitter:title" content="NE555 Astable Calculator">
+  <meta name="twitter:description" content="Use this NE555 Astable Calculator to determine frequency, duty cycle, and timing for your oscillator circuit.
+Capacitance (C): μF nF Resistance 1 (R1):">
+
   <link rel="canonical" href="https://ishaBangla.github.io/SMElectronics/posts/" />
 </head>
 <body
@@ -136,34 +152,161 @@
 </script>
 <main
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">NE555 Astable Calculator</h1></header>
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">NE555 Astable Calculator</h2>
-  <time class="text-xs antialiased opacity-60"
-    >May 14, 2025</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://ishaBangla.github.io/SMElectronics/posts/index.md/"
-    >NE555 Astable Calculator</a
-  >
+  <section><p><img src="im1.jpg" alt="My Image"></p>
+<p>Use this NE555 Astable Calculator to determine frequency, duty cycle, and timing for your oscillator circuit.</p>
+<style>
+  .calculator {
+    max-width: 500px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: sans-serif;
+  }
+
+  .calculator .input-group {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    align-items: center;
+  }
+
+  .calculator .input-group input,
+  .calculator .input-group select {
+    width: 170px;
+    padding: 0.4rem;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .calculator .input-group input:focus,
+  .calculator .input-group select:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+  }
+
+  .calculator button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .result {
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  .error-message {
+    color: red;
+    margin-top: 1rem;
+  }
+</style>
+<div class="calculator">
+  <label>Capacitance (C):</label>
+  <div class="input-group">
+    <input type="number" id="capacitanceValue" placeholder="e.g., 10">
+    <select id="capacitanceUnit">
+      <option value="1e-6">μF</option>
+      <option value="1e-9">nF</option>
+    </select>
+  </div>
+<p><label>Resistance 1 (R1):</label></p>
+  <div class="input-group">
+    <input type="number" id="resistance1Value" placeholder="e.g., 1000">
+    <select id="resistance1Unit">
+      <option value="1">Ω</option>
+      <option value="1000">KΩ</option>
+      <option value="1000000">MΩ</option>
+    </select>
+  </div>
+<p><label>Resistance 2 (R2):</label></p>
+  <div class="input-group">
+    <input type="number" id="resistance2Value" placeholder="e.g., 1000">
+    <select id="resistance2Unit">
+      <option value="1">Ω</option>
+      <option value="1000">KΩ</option>
+      <option value="1000000">MΩ</option>
+    </select>
+  </div>
+<p><button onclick="calculate()">Calculate</button></p>
+  <div class="error-message" id="errorMessage"></div>
+  <div class="result" id="resultFields"></div>
+</div>
+<script>
+  function calculate() {
+    const C = parseFloat(document.getElementById("capacitanceValue").value);
+    const Cunit = parseFloat(document.getElementById("capacitanceUnit").value);
+    const R1 = parseFloat(document.getElementById("resistance1Value").value);
+    const R1unit = parseFloat(document.getElementById("resistance1Unit").value);
+    const R2 = parseFloat(document.getElementById("resistance2Value").value);
+    const R2unit = parseFloat(document.getElementById("resistance2Unit").value);
+
+    const errorMsg = document.getElementById("errorMessage");
+    const resultDiv = document.getElementById("resultFields");
+
+    if (isNaN(C) || isNaN(R1) || isNaN(R2)) {
+      errorMsg.textContent = "Please enter valid numeric values for C, R1, and R2.";
+      resultDiv.innerHTML = "";
+      return;
+    }
+
+    errorMsg.textContent = "";
+
+    const Cfarads = C * Cunit;
+    const R1ohms = R1 * R1unit;
+    const R2ohms = R2 * R2unit;
+
+    const T1 = 0.693 * (R1ohms + R2ohms) * Cfarads;
+    const T2 = 0.693 * R2ohms * Cfarads;
+    const T = T1 + T2;
+    const freq = 1 / T;
+    const duty = (T1 / T) * 100;
+
+    let freqDisplay;
+    if (freq >= 1e6) {
+      freqDisplay = (freq / 1e6).toFixed(3) + " MHz";
+    } else if (freq >= 1e3) {
+      freqDisplay = (freq / 1e3).toFixed(3) + " kHz";
+    } else {
+      freqDisplay = freq.toFixed(3) + " Hz";
+    }
+
+    resultDiv.innerHTML = `
+      <p>Time High (T1): ${formatTime(T1)} (${T1.toFixed(6)} seconds)</p>
+      <p>Time Low (T2): ${formatTime(T2)} (${T2.toFixed(6)} seconds)</p>
+      <p>Period (T): ${formatTime(T)} (${T.toFixed(6)} seconds)</p>
+      <p>Frequency: ${freqDisplay}</p>
+      <p>Duty Cycle: ${duty.toFixed(2)}%</p>
+    `;
+  }
+
+  function formatTime(seconds) {
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = (seconds % 60).toFixed(2);
+
+    let result = "";
+
+    if (hrs > 0) result += `${hrs} hr `;
+    if (mins > 0 || hrs > 0) result += `${mins} min `;
+    result += `${secs} sec`;
+
+    return result.trim();
+  }
+</script>
 </section>
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">NE555 Monostable Calculator</h2>
-  <time class="text-xs antialiased opacity-60"
-    >May 14, 2025</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://ishaBangla.github.io/SMElectronics/posts/ne555-monostable-calculator/"
-    >NE555 Monostable Calculator</a
-  >
-</section>
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">LED Resistor Calculator</h2>
-  <time class="text-xs antialiased opacity-60"
-    >May 14, 2025</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://ishaBangla.github.io/SMElectronics/posts/led-resistor-calculator/"
-    >LED Resistor Calculator</a
-  >
-</section></main><footer
+  </article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
   <div class="mr-auto">&copy;2025
