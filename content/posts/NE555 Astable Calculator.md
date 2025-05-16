@@ -3,8 +3,8 @@ title: "NE555 Astable Calculator"
 date: 2025-05-14T11:30:00+05:30
 draft: false
 ---
-hi hi 
-![555 Circuit](/images/s.jpg)
+hi hi hi 
+![555 Circuit](/s.jpg)
 ![555 Circuit](images/s.jpg)
 
 
