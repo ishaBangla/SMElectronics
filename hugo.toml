@@ -1,4 +1,4 @@
-baseURL = "https://ishaBangla.github.io/SMElectronics/"
+baseURL = "http://localhost:1313/"
 publishDir = "docs"
 languageCode = "en-us"
 title = "SM Electronics"
