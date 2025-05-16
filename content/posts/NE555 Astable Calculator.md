@@ -6,6 +6,9 @@ draft: false
 hi hi hi 
 ![555 Circuit](/s.jpg)
 ![555 Circuit](images/s.jpg)
+<img src="https://ishaBangla.github.io/SMElectronics/images/s.jpg" alt="555 Circuit" />
+<img src="{{ "images/s.jpg" | relURL }}" alt="555 Circuit">
+
 
 
 Use this NE555 Astable Calculator to determine frequency, duty cycle, and timing for your oscillator circuit.
