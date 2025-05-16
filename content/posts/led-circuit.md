@@ -1,7 +1,7 @@
 ---
 title: "Simple LED Circuit"
 date: 2025-03-26T10:00:00
-draft: false
+draft: true
 tags: ["electronics", "LED", "circuit"]
 ---
 

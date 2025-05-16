@@ -1,7 +1,7 @@
 ---
 title: "NE555 Monostable"
 date: 2025-05-14T11:00:00+05:30
-draft: false
+draft: true
 ---
 
 Calculate the pulse duration for your NE555 timer in monostable mode. Enter your resistance and capacitance values to find the output pulse width.
