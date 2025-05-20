@@ -3,8 +3,12 @@ title: "NE555 Astable Calculator"
 date: 2025-05-14T11:30:00+05:30
 draft: false
 ---
-
+Main Circuit:
 <img src="https://ishaBangla.github.io/SMElectronics/images/s1.jpg" alt="555 Circuit" />
+you can drive a led
+<img src="https://ishaBangla.github.io/SMElectronics/images/s2.jpg" alt="555 Circuit" />
+Or you can drive a relay 
+<img src="https://ishaBangla.github.io/SMElectronics/images/s3.jpg" alt="555 Circuit" />
 
 This advanced NE555 Astable Calculator to determine frequency, duty cycle,
 and timing for your oscillator circuit.
