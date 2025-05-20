@@ -5,8 +5,10 @@ draft: false
 ---
 
 <img src="https://ishaBangla.github.io/SMElectronics/images/s1.jpg" alt="555 Circuit" />
+
 This advanced NE555 Astable Calculator to determine frequency, duty cycle,
 and timing for your oscillator circuit.
+
 <style>
   .calculator {
     max-width: 500px;
