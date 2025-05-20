@@ -13,7 +13,9 @@ draft: false
 
 
 
-This advanced NE555 Astable Calculator to determine frequency, duty cycle, and timing for your oscillator circuit.
+
+This advanced NE555 Astable Calculator to determine frequency, duty cycle,
+and timing for your oscillator circuit.
 <style>
   .calculator {
     max-width: 500px;
