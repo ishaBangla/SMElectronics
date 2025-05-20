@@ -4,6 +4,7 @@ date: 2025-05-14T11:30:00+05:30
 draft: false
 ---
 <img src="https://ishaBangla.github.io/SMElectronics/images/s.jpg" alt="555 Circuit" />
+<img src="https://ishaBangla.github.io/SMElectronics/images/s1.jpg" alt="555 Circuit" />
 
 
 
