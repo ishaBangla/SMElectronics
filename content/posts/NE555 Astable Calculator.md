@@ -5,9 +5,9 @@ draft: false
 ---
 Main Circuit:
 <img src="https://ishaBangla.github.io/SMElectronics/images/s1.jpg" alt="555 Circuit" />
-you can drive a led
+You can drive a LED:
 <img src="https://ishaBangla.github.io/SMElectronics/images/s2.jpg" alt="555 Circuit" />
-Or you can drive a relay 
+Or you can drive a relay:
 <img src="https://ishaBangla.github.io/SMElectronics/images/s3.jpg" alt="555 Circuit" />
 
 This advanced NE555 Astable Calculator to determine frequency, duty cycle,
